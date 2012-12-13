@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem "nokogiri", "~> 1.5.5"
 gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
@@ -7,19 +8,21 @@ gem 'rails', '3.1.0'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'rspec-rails'
   gem 'simplecov'
 end
+
 group :development, :test do
   gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ruby-debug19'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
  
 end
+
 group :production do
   gem 'pg'
 end
